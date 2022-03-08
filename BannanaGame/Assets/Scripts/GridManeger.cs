@@ -6,7 +6,7 @@ public class GridManeger : MonoBehaviour
 {
     public int numRows = 6;
     public int numCollomns = 6;
-    [SerializeField] private float padding = 0.1f;
+    public float padding = 0.1f;
 
     [SerializeField] private Tile tilePrefab;
 
@@ -25,6 +25,8 @@ public class GridManeger : MonoBehaviour
                 Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
                 tile.transform.localPosition = tilePos;
                 tile.name = $"Tile_{x}_{y}";
+                tile.gridManeger = this;
+                tile.gridCords = new Vector2Int(x, y);
             }
         }
     }

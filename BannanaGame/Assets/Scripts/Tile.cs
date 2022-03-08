@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GridManeger gridManeger;
+    public Vector2Int gridCords;
+
     void Start()
     {
         
