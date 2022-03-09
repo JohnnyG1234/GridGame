@@ -8,6 +8,8 @@ public class GridManeger : MonoBehaviour
     public int numCollomns = 6;
     public float padding = 0.1f;
 
+    private Tile[] tiles;
+
     [SerializeField] private Tile tilePrefab;
 
     private void Awake()
@@ -17,6 +19,7 @@ public class GridManeger : MonoBehaviour
 
     public void InitGrid()
     {
+        tiles = new Tile[numRows * numCollomns];
         for (int y = 0; y < numRows; y++)
         {
             for (int x = 0; x < numCollomns; x++)
@@ -27,7 +30,13 @@ public class GridManeger : MonoBehaviour
                 tile.name = $"Tile_{x}_{y}";
                 tile.gridManeger = this;
                 tile.gridCords = new Vector2Int(x, y);
+                tiles[y * numCollomns + x] = tile;
             }
         }
+    }
+
+    public Tile GetTile(Vector2Int cords)
+    {
+        return tiles[cords.y * numCollomns + cords.x];
     }
 }
