@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class playerMovement : MonoBehaviour
+public class evilMonkey : MonoBehaviour
 {
+
     [SerializeField] private GridManeger grid;
     private Vector2Int cords;
     private Vector2Int moveDir;
@@ -15,7 +16,7 @@ public class playerMovement : MonoBehaviour
 
     private void Start()
     {
-        cords = new Vector2Int(3, 0);
+        cords = new Vector2Int(3, 6);
         currentTile = grid.GetTile(cords);
         transform.position = currentTile.transform.position;
     }
@@ -87,6 +88,4 @@ public class playerMovement : MonoBehaviour
             return true;
         }
     }
-
-
 }
