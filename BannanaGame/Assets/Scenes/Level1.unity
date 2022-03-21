@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142968856}
   - component: {fileID: 142968855}
+  - component: {fileID: 142968857}
   m_Layer: 0
   m_Name: GridManeger
   m_TagString: Untagged
@@ -156,6 +157,7 @@ MonoBehaviour:
   numCollomns: 7
   padding: 0.1
   tilePrefab: {fileID: 899093820748457240, guid: 74d72e0639852ca4888f6b444dcd5d2e, type: 3}
+  wallPrefab: {fileID: 8594282816505544300, guid: b01622c64c47e5d4d88aa055fdcf6f28, type: 3}
 --- !u!4 &142968856
 Transform:
   m_ObjectHideFlags: 0
@@ -170,6 +172,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &142968857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142968854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32447bc87bdb0bb48a6fa4ddc5e0b75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 230679931}
+  evilMonkey: {fileID: 1796195192}
 --- !u!1 &230679928
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 142968855}
+  currentTile: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +379,7 @@ GameObject:
   - component: {fileID: 1796195192}
   m_Layer: 0
   m_Name: EvilMonkey
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,7 +423,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 0.7075472, g: 0.28983524, b: 0.21026166, a: 1}
   m_FlipX: 0
@@ -445,3 +462,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 142968855}
+  currentTile: {fileID: 0}

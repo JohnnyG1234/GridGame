@@ -10,7 +10,7 @@ public class evilMonkey : MonoBehaviour
     private Vector2Int cords;
     private Vector2Int moveDir;
 
-    Tile currentTile;
+    [HideInInspector] public Tile currentTile;
 
     private DOTween moveTween;
 
@@ -23,6 +23,7 @@ public class evilMonkey : MonoBehaviour
 
     private void Update()
     {
+        currentTile = grid.GetTile(cords);
         getInput();
     }
 
@@ -31,7 +32,7 @@ public class evilMonkey : MonoBehaviour
         cords = cords + moveDirection;
         Vector2Int oldPos = currentTile.gridCords;
         currentTile = grid.GetTile(cords);
-        DOTween.To(() => transform.position, x => transform.position = x, currentTile.transform.position, .2f);
+        DOTween.To(() => transform.position, x => transform.position = x, currentTile.transform.position, .3f);
     }
 
     private void getInput()
@@ -83,9 +84,18 @@ public class evilMonkey : MonoBehaviour
         {
             return false;
         }
+        else if (grid.GetTile(targetCord).tag == "wall")
+        {
+            return false;
+        }
         else
         {
             return true;
         }
+    }
+
+    public Vector2Int getCords()
+    {
+        return cords;
     }
 }

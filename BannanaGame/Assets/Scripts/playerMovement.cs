@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class playerMovement : MonoBehaviour
     private Vector2Int cords;
     private Vector2Int moveDir;
 
-    Tile currentTile;
+    [HideInInspector] public Tile currentTile;
 
     private DOTween moveTween;
 
@@ -22,6 +23,7 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
+        currentTile = grid.GetTile(cords);
         getInput();
     }
 
@@ -82,11 +84,19 @@ public class playerMovement : MonoBehaviour
         {
             return false;
         }
+        else if (grid.GetTile(targetCord).tag == "wall")
+        {
+            return false;
+        }
         else
         {
             return true;
         }
     }
 
+    public Vector2Int getCords()
+    {
+        return cords;
+    }
 
 }
