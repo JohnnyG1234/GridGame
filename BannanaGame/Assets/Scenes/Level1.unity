@@ -158,6 +158,7 @@ MonoBehaviour:
   padding: 0.1
   tilePrefab: {fileID: 899093820748457240, guid: 74d72e0639852ca4888f6b444dcd5d2e, type: 3}
   wallPrefab: {fileID: 8594282816505544300, guid: b01622c64c47e5d4d88aa055fdcf6f28, type: 3}
+  source: {fileID: 2800000, guid: 59562da182a790c4f9fed0dbdf7db6da, type: 3}
 --- !u!4 &142968856
 Transform:
   m_ObjectHideFlags: 0

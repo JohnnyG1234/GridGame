@@ -13,6 +13,8 @@ public class GridManeger : MonoBehaviour
     [SerializeField] private Tile tilePrefab;
     [SerializeField] private Tile wallPrefab;
 
+    [SerializeField] private Texture2D source;
+
     private void Awake()
     {
         InitGrid();
@@ -20,12 +22,14 @@ public class GridManeger : MonoBehaviour
 
     public void InitGrid()
     {
+        int sourceMipLevel = 0;
+        Color32[] pixels = source.GetPixels32(sourceMipLevel);
         tiles = new Tile[numRows * numCollomns];
         for (int y = 0; y < numRows; y++)
         {
             for (int x = 0; x < numCollomns; x++)
             {
-                if (x == 2 && y == 3)
+                if (pixels[x * y].g == 0 && pixels[x * y].r == 0 && pixels[x * y].b == 0)
                 {
                     Tile wall = Instantiate(wallPrefab, transform);
                     Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
@@ -35,7 +39,7 @@ public class GridManeger : MonoBehaviour
                     wall.gridCords = new Vector2Int(x, y);
                     tiles[y * numCollomns + x] = wall;
                 }
-                else
+                else if (pixels[x * y].g > 150 && pixels[x * y].r > 150 && pixels[x * y].b > 150)
                 {
                     Tile tile = Instantiate(tilePrefab, transform);
                     Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
