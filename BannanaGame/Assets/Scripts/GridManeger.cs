@@ -17,7 +17,9 @@ public class GridManeger : MonoBehaviour
     [SerializeField] private evilMonkey evilMoneky;
 
     [SerializeField] private Texture2D source;
+
     [SerializeField] private banana banana;
+    [SerializeField] private spikes spikes;
 
     private void Awake()
     {

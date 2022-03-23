@@ -53,6 +53,7 @@ MonoBehaviour:
   evilMoneky: {fileID: 0}
   source: {fileID: 2800000, guid: bd0534dc10f02a14cb534af9c24f3e31, type: 3}
   banana: {fileID: 0}
+  spikes: {fileID: 0}
 --- !u!114 &6563429914455221321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,3 +69,4 @@ MonoBehaviour:
   player: {fileID: 0}
   evilMonkey: {fileID: 0}
   banana: {fileID: 0}
+  spikes: {fileID: 0}
