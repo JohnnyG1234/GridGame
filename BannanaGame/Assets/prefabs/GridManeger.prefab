@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6563429914455221318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6563429914455221320}
+  - component: {fileID: 6563429914455221319}
+  - component: {fileID: 6563429914455221321}
+  m_Layer: 0
+  m_Name: GridManeger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6563429914455221320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563429914455221318}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6563429914455221319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563429914455221318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58dc92813385ed240848a1c44995ff5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numRows: 7
+  numCollomns: 7
+  padding: 0.1
+  tilePrefab: {fileID: 899093820748457240, guid: 74d72e0639852ca4888f6b444dcd5d2e, type: 3}
+  wallPrefab: {fileID: 8594282816505544300, guid: b01622c64c47e5d4d88aa055fdcf6f28, type: 3}
+  player: {fileID: 0}
+  evilMoneky: {fileID: 0}
+  source: {fileID: 2800000, guid: bd0534dc10f02a14cb534af9c24f3e31, type: 3}
+  banana: {fileID: 0}
+--- !u!114 &6563429914455221321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563429914455221318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32447bc87bdb0bb48a6fa4ddc5e0b75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  evilMonkey: {fileID: 0}
+  banana: {fileID: 0}

@@ -12,11 +12,13 @@ public class playerMovement : MonoBehaviour
 
     [HideInInspector] public Tile currentTile;
 
+    [HideInInspector] public Vector2Int startingCords;
+
     private DOTween moveTween;
 
     private void Start()
     {
-        cords = new Vector2Int(3, 0);
+        cords = startingCords;
         currentTile = grid.GetTile(cords);
         transform.position = currentTile.transform.position;
     }

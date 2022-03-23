@@ -13,7 +13,11 @@ public class GridManeger : MonoBehaviour
     [SerializeField] private Tile tilePrefab;
     [SerializeField] private Tile wallPrefab;
 
+    [SerializeField] private playerMovement player;
+    [SerializeField] private evilMonkey evilMoneky;
+
     [SerializeField] private Texture2D source;
+    [SerializeField] private banana banana;
 
     private void Awake()
     {
@@ -29,7 +33,7 @@ public class GridManeger : MonoBehaviour
         {
             for (int x = 0; x < numCollomns; x++)
             {
-                if (pixels[x * y].g == 0 && pixels[x * y].r == 0 && pixels[x * y].b == 0)
+                if (pixels[y * numCollomns + x].g == 0 && pixels[y * numCollomns + x].r == 0 && pixels[y * numCollomns + x].b == 0)
                 {
                     Tile wall = Instantiate(wallPrefab, transform);
                     Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
@@ -39,8 +43,41 @@ public class GridManeger : MonoBehaviour
                     wall.gridCords = new Vector2Int(x, y);
                     tiles[y * numCollomns + x] = wall;
                 }
-                else if (pixels[x * y].g > 150 && pixels[x * y].r > 150 && pixels[x * y].b > 150)
+                else if (pixels[y * numCollomns + x].g > 150 && pixels[y * numCollomns + x].r > 150 && pixels[y * numCollomns + x].b > 150)
                 {
+                    Tile tile = Instantiate(tilePrefab, transform);
+                    Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
+                    tile.transform.localPosition = tilePos;
+                    tile.name = $"Tile_{x}_{y}";
+                    tile.gridManeger = this;
+                    tile.gridCords = new Vector2Int(x, y);
+                    tiles[y * numCollomns + x] = tile;
+                }
+                else if (pixels[y * numCollomns + x].b > 150)
+                {
+                    player.startingCords = new Vector2Int(x, y);
+                    Tile tile = Instantiate(tilePrefab, transform);
+                    Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
+                    tile.transform.localPosition = tilePos;
+                    tile.name = $"Tile_{x}_{y}";
+                    tile.gridManeger = this;
+                    tile.gridCords = new Vector2Int(x, y);
+                    tiles[y * numCollomns + x] = tile;
+                }
+                else if(pixels[y * numCollomns + x].r > 150)
+                {
+                    evilMoneky.startingCords = new Vector2Int(x, y);
+                    Tile tile = Instantiate(tilePrefab, transform);
+                    Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
+                    tile.transform.localPosition = tilePos;
+                    tile.name = $"Tile_{x}_{y}";
+                    tile.gridManeger = this;
+                    tile.gridCords = new Vector2Int(x, y);
+                    tiles[y * numCollomns + x] = tile;
+                }
+                else if(pixels[y * numCollomns + x].g > 150)
+                {
+                    banana.startingCords = new Vector2Int(x, y);
                     Tile tile = Instantiate(tilePrefab, transform);
                     Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
                     tile.transform.localPosition = tilePos;

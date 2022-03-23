@@ -11,12 +11,13 @@ public class evilMonkey : MonoBehaviour
     private Vector2Int moveDir;
 
     [HideInInspector] public Tile currentTile;
+    [HideInInspector] public Vector2Int startingCords;
 
     private DOTween moveTween;
 
     private void Start()
     {
-        cords = new Vector2Int(3, 6);
+        cords = startingCords;
         currentTile = grid.GetTile(cords);
         transform.position = currentTile.transform.position;
     }
@@ -57,7 +58,7 @@ public class evilMonkey : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            moveDir = new Vector2Int(0, 1);
+            moveDir = new Vector2Int(0, -1);
             if (checkTile(moveDir + cords))
             {
                 move(moveDir);
@@ -66,7 +67,7 @@ public class evilMonkey : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            moveDir = new Vector2Int(0, -1);
+            moveDir = new Vector2Int(0, 1);
             if (checkTile(moveDir + cords))
             {
                 move(moveDir);
