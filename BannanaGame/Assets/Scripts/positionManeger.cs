@@ -2,30 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class positionManeger : MonoBehaviour
 {
     [SerializeField] private playerMovement player;
+    [SerializeField] private playerAnimation playerAnimator;
     [SerializeField] private evilMonkey evilMonkey;
 
     [SerializeField] private banana banana;
     [SerializeField] private spikes spikes;
 
+
     private void Update()
     {
         if (player.currentTile == evilMonkey.currentTile)
         {
-            Invoke("killPlayer", .3f);
+            playDeathAnim();
+            Invoke("killPlayer", .2f);
         }
 
-        if (player.currentTile == banana.bannanaTile())
+        if (player.currentTile == evilMonkey.currentTile && player.currentTile == banana.bannanaTile())
         {
-            Debug.Log("VICTORY");
+            playDeathAnim();
+            Invoke("killPlayer", .2f);
+        }
+
+        if (player.currentTile == banana.bannanaTile() && player.currentTile != evilMonkey.currentTile)
+        {
+            Invoke("loadNext", .2f);
         }
 
         if (player.currentTile == spikes.spikeTile())
         {
-            Invoke("killPlayer", .3f);
+            playDeathAnim();
+            Invoke("killPlayer", .2f);
         }
     }
 
@@ -33,4 +44,15 @@ public class positionManeger : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    private void loadNext()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void playDeathAnim()
+    {
+        playerAnimator.playDeathAnimation();
+    }
+
 }

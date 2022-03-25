@@ -195,6 +195,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27bf70d52c46f9243ac29da6c5f5f0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &194638952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3839305072543019435, guid: bf4192db3b71e2b47a854218879431a4, type: 3}
+  m_PrefabInstance: {fileID: 194638950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b782cc5f58c5d4f8bcc5cdbc599d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &240100687
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +380,10 @@ PrefabInstance:
       propertyPath: evilMonkey
       value: 
       objectReference: {fileID: 1927798690}
+    - target: {fileID: 6563429914455221321, guid: b36ba760bb0f3e349a434ae0740fa202, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 194638952}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b36ba760bb0f3e349a434ae0740fa202, type: 3}
 --- !u!114 &403002090 stripped

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3839305072470643923}
   - component: {fileID: 3839305072470643920}
   - component: {fileID: 3839305072470643922}
+  - component: {fileID: 3839305072543019435}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -98,3 +99,15 @@ MonoBehaviour:
   grid: {fileID: 0}
   currentTile: {fileID: 0}
   startingCords: {x: 0, y: 0}
+--- !u!114 &3839305072543019435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839305072470643921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b782cc5f58c5d4f8bcc5cdbc599d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
