@@ -55,6 +55,17 @@ public class GridManeger : MonoBehaviour
                     tile.gridCords = new Vector2Int(x, y);
                     tiles[y * numCollomns + x] = tile;
                 }
+                else if (pixels[y * numCollomns + x].g > 150 && pixels[y * numCollomns + x].r > 150)
+                {
+                    spikes.startingCords = new Vector2Int(x, y);
+                    Tile tile = Instantiate(tilePrefab, transform);
+                    Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
+                    tile.transform.localPosition = tilePos;
+                    tile.name = $"Tile_{x}_{y}";
+                    tile.gridManeger = this;
+                    tile.gridCords = new Vector2Int(x, y);
+                    tiles[y * numCollomns + x] = tile;
+                }
                 else if (pixels[y * numCollomns + x].b > 150)
                 {
                     player.startingCords = new Vector2Int(x, y);
