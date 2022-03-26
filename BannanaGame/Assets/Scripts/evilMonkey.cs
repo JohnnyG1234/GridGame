@@ -13,6 +13,8 @@ public class evilMonkey : MonoBehaviour
     [HideInInspector] public Tile currentTile;
     [HideInInspector] public Vector2Int startingCords;
 
+    [SerializeField] private int xMove = 1;
+
     private DOTween moveTween;
 
     private void Start()
@@ -40,7 +42,7 @@ public class evilMonkey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            moveDir = new Vector2Int(1, 0);
+            moveDir = new Vector2Int(1 * xMove, 0);
             if (checkTile(moveDir + cords))
             {
                 move(moveDir);
@@ -49,7 +51,7 @@ public class evilMonkey : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            moveDir = new Vector2Int(-1, 0);
+            moveDir = new Vector2Int(-1 * xMove, 0);
             if (checkTile(moveDir + cords))
             {
                 move(moveDir);
