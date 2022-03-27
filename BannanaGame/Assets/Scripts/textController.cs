@@ -10,6 +10,7 @@ public class textController : MonoBehaviour
     [SerializeField] private GridManeger grid;
 
     private Vector2Int firstTrigger = new Vector2Int(3, 1);
+    private Vector2Int secondTrigger = new Vector2Int(2, 1);
 
     [TextArea(5, 15)]
     public string[] text;
@@ -24,6 +25,11 @@ public class textController : MonoBehaviour
         if (player.currentTile == grid.GetTile(firstTrigger))
         {
             textRefference.text = text[1];
+        }
+
+        if (player.currentTile == grid.GetTile(secondTrigger))
+        {
+            textRefference.text = text[2];
         }
     }
 }
