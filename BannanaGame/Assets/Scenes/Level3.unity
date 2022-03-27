@@ -302,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 876778352}
     - target: {fileID: 304406845876596423, guid: 47402e2b396048e48b2199801074a6a0, type: 3}
       propertyPath: xMove
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 304406845876596424, guid: 47402e2b396048e48b2199801074a6a0, type: 3}
       propertyPath: m_RootOrder
