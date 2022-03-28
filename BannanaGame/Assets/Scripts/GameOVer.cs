@@ -9,16 +9,23 @@ public class GameOVer : MonoBehaviour
     [SerializeField] private AudioManeger audioManeger;
     [SerializeField] private GameObject player;
 
+    private bool gameIsOver = false;
+
     public void gameOver()
     {
+        if (gameIsOver == true)
+            return;
+
+        gameIsOver = true;
         gameOverUi.SetActive(true);
         audioManeger.Play("GAMEOVER");
         GameObject.Destroy(player);
-        Invoke("resetScene", .6f);
+        Invoke("resetScene", 1f);
     }
 
     private void resetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameIsOver = false;
     }
 }
