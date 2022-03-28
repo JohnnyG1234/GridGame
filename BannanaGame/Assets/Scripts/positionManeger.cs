@@ -13,46 +13,35 @@ public class positionManeger : MonoBehaviour
     [SerializeField] private banana banana;
     [SerializeField] private spikes spikes;
 
+    [SerializeField] private GameOVer gameOver;
+
 
     private void Update()
     {
         if (player.currentTile == evilMonkey.currentTile)
         {
-            playDeathAnim();
-            Invoke("killPlayer", .2f);
+            gameOver.gameOver();
         }
 
         if (player.currentTile == evilMonkey.currentTile && player.currentTile == banana.bannanaTile())
         {
-            playDeathAnim();
-            Invoke("killPlayer", .2f);
+            gameOver.gameOver();
         }
 
         if (player.currentTile == banana.bannanaTile() && player.currentTile != evilMonkey.currentTile)
         {
-            Invoke("loadNext", .2f);
+            Invoke("loadNext", .5f);
         }
 
         if (player.currentTile == spikes.spikeTile())
         {
-            playDeathAnim();
-            Invoke("killPlayer", .2f);
+            gameOver.gameOver();
         }
-    }
-
-    private void killPlayer()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void loadNext()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    private void playDeathAnim()
-    {
-        playerAnimator.playDeathAnimation();
     }
 
 }

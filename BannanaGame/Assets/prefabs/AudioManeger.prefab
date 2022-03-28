@@ -52,3 +52,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5b2c9dbae14a77d4c9ef945a10c6b821, type: 3}
     volume: 0.5
     source: {fileID: 0}
+  - name: GAMEOVER
+    clip: {fileID: 8300000, guid: a19b32a9b50f18b43a3d386eb27506e3, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
