@@ -43,4 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02673ed5d1d8d54b9e75215a54520b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: UICLICK
+    clip: {fileID: 8300000, guid: 0e6d4d48fef8bd34f9a18cc6b7ed156c, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
+  - name: MOVE
+    clip: {fileID: 8300000, guid: 5b2c9dbae14a77d4c9ef945a10c6b821, type: 3}
+    volume: 0.5
+    source: {fileID: 0}

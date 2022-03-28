@@ -10,6 +10,8 @@ public class playerMovement : MonoBehaviour
     private Vector2Int cords;
     private Vector2Int moveDir;
 
+    [SerializeField] private AudioManeger audioManeger;
+
     [HideInInspector] public Tile currentTile;
 
     [HideInInspector] public Vector2Int startingCords;
@@ -31,6 +33,7 @@ public class playerMovement : MonoBehaviour
 
     private void move(Vector2Int moveDirection)
     {
+        audioManeger.Play("MOVE");
         cords = cords + moveDirection;
         Vector2Int oldPos = currentTile.gridCords;
         currentTile = grid.GetTile(cords);

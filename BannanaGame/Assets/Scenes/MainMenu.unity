@@ -313,22 +313,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8801223748776637208, guid: f532b6690dff81443be476517f490fec, type: 3}
-      propertyPath: sounds.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8801223748776637208, guid: f532b6690dff81443be476517f490fec, type: 3}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0e6d4d48fef8bd34f9a18cc6b7ed156c, type: 3}
-    - target: {fileID: 8801223748776637208, guid: f532b6690dff81443be476517f490fec, type: 3}
-      propertyPath: sounds.Array.data[0].name
-      value: UICLICK
-      objectReference: {fileID: 0}
-    - target: {fileID: 8801223748776637208, guid: f532b6690dff81443be476517f490fec, type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8801223748776637209, guid: f532b6690dff81443be476517f490fec, type: 3}
       propertyPath: m_Name
       value: AudioManeger
