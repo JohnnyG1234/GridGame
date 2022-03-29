@@ -8,6 +8,7 @@ public class GameOVer : MonoBehaviour
     [SerializeField] private GameObject gameOverUi;
     [SerializeField] private AudioManeger audioManeger;
     [SerializeField] private GameObject player;
+    [SerializeField] private AudioSource music;
 
     private bool gameIsOver = false;
 
@@ -17,15 +18,17 @@ public class GameOVer : MonoBehaviour
             return;
 
         gameIsOver = true;
+        music.mute = true;
         gameOverUi.SetActive(true);
         audioManeger.Play("GAMEOVER");
         GameObject.Destroy(player);
-        Invoke("resetScene", 1f);
+        Invoke("resetScene", 1.2f);
     }
 
     private void resetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        music.mute = false;
         gameIsOver = false;
     }
 }
