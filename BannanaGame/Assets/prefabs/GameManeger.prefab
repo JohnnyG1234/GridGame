@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 6563429914455221319}
   - component: {fileID: 6563429914455221321}
   - component: {fileID: 6563429914329164883}
+  - component: {fileID: 1949129735178380073}
   m_Layer: 0
-  m_Name: GridManeger
+  m_Name: GameManeger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,3 +90,15 @@ MonoBehaviour:
   audioManeger: {fileID: 0}
   player: {fileID: 0}
   music: {fileID: 0}
+--- !u!114 &1949129735178380073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563429914455221318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7dd1e5aab0f2c045b631f31ec415a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

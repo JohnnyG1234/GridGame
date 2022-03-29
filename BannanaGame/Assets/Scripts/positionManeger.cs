@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class positionManeger : MonoBehaviour
@@ -14,6 +13,7 @@ public class positionManeger : MonoBehaviour
     [SerializeField] private spikes spikes;
 
     [SerializeField] private GameOVer gameOver;
+    [SerializeField] private loadNext loadNext;
 
 
     private void Update()
@@ -30,7 +30,7 @@ public class positionManeger : MonoBehaviour
 
         if (player.currentTile == banana.bannanaTile() && player.currentTile != evilMonkey.currentTile)
         {
-            Invoke("loadNext", .5f);
+            loadNext.NextLevel();
         }
 
         if (player.currentTile == spikes.spikeTile())
@@ -38,10 +38,4 @@ public class positionManeger : MonoBehaviour
             gameOver.gameOver();
         }
     }
-
-    private void loadNext()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
 }
