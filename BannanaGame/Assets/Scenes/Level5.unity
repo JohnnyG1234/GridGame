@@ -232,22 +232,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8801223748776637208, guid: f532b6690dff81443be476517f490fec, type: 3}
-      propertyPath: sounds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8801223748776637208, guid: f532b6690dff81443be476517f490fec, type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2ff5440694a1b224dad8c731fc3176b1, type: 3}
-    - target: {fileID: 8801223748776637208, guid: f532b6690dff81443be476517f490fec, type: 3}
-      propertyPath: sounds.Array.data[4].name
-      value: TELEPORT
-      objectReference: {fileID: 0}
-    - target: {fileID: 8801223748776637208, guid: f532b6690dff81443be476517f490fec, type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8801223748776637209, guid: f532b6690dff81443be476517f490fec, type: 3}
       propertyPath: m_Name
       value: AudioManeger

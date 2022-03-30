@@ -60,3 +60,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4e46edf9f5327a34286858abede79b0e, type: 3}
     volume: 0.5
     source: {fileID: 0}
+  - name: TELEPORT
+    clip: {fileID: 8300000, guid: 2ff5440694a1b224dad8c731fc3176b1, type: 3}
+    volume: 0.5
+    source: {fileID: 0}
