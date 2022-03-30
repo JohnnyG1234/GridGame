@@ -20,6 +20,7 @@ public class GridManeger : MonoBehaviour
 
     [SerializeField] private banana banana;
     [SerializeField] private spikes spikes;
+    [SerializeField] private portal portal;
 
     private void Awake()
     {
@@ -58,6 +59,17 @@ public class GridManeger : MonoBehaviour
                 else if (pixels[y * numCollomns + x].g > 150 && pixels[y * numCollomns + x].r > 150)
                 {
                     spikes.startingCords = new Vector2Int(x, y);
+                    Tile tile = Instantiate(tilePrefab, transform);
+                    Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
+                    tile.transform.localPosition = tilePos;
+                    tile.name = $"Tile_{x}_{y}";
+                    tile.gridManeger = this;
+                    tile.gridCords = new Vector2Int(x, y);
+                    tiles[y * numCollomns + x] = tile;
+                }
+                else if ((pixels[y * numCollomns + x].g > 150 && pixels[y * numCollomns + x].b > 150))
+                {
+                    portal.cords = new Vector2Int(x, y);
                     Tile tile = Instantiate(tilePrefab, transform);
                     Vector2 tilePos = new Vector2(x + (padding * x), y + (padding * y));
                     tile.transform.localPosition = tilePos;

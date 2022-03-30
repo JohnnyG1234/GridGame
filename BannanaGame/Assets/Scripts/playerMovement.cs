@@ -27,7 +27,8 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
-        currentTile = grid.GetTile(cords);
+        transform.position = currentTile.transform.position;
+        cords = currentTile.gridCords;
         getInput();
     }
 
