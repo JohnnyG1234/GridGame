@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class textController : MonoBehaviour
 {
@@ -22,14 +23,17 @@ public class textController : MonoBehaviour
 
     private void Update()
     {
-        if (player.currentTile == grid.GetTile(firstTrigger))
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            textRefference.text = text[1];
-        }
+            if (player.currentTile == grid.GetTile(firstTrigger))
+            {
+                textRefference.text = text[1];
+            }
 
-        if (player.currentTile == grid.GetTile(secondTrigger))
-        {
-            textRefference.text = text[2];
+            if (player.currentTile == grid.GetTile(secondTrigger))
+            {
+                textRefference.text = text[2];
+            }
         }
     }
 }
