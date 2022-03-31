@@ -18,4 +18,10 @@ public class mainMenu : MonoBehaviour
         audioManeger.Play("UICLICK");
         Application.Quit();
     }
+
+    public void ToMainMenu()
+    {
+        audioManeger.Play("UICLICK");
+        SceneManager.LoadScene(0);
+    }
 }
